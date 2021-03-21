@@ -116,7 +116,7 @@ def custom_gabor(shape, dtype=None):
         total_ker.append(kernels)
     np_tot = shared(np.array(total_ker))
     return K.variable(np_tot, dtype=dtype)
-
+ 
 
 def build_model():
     model = Sequential()
