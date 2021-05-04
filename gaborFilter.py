@@ -10,8 +10,10 @@ lamda = 2
 gamma = 0.5
 phi = 0.8
 
+imgName = "23"
 
-img = cv2.imread("./preprocessed_dataset/training/21.tif", flags=cv2.IMREAD_GRAYSCALE)
+
+img = cv2.imread("./preprocessed_dataset/training/"+imgName+".tif", flags=cv2.IMREAD_GRAYSCALE)
 img2 = img.reshape(-1)
 df = pd.DataFrame()
 df['original image'] = img2
@@ -32,7 +34,7 @@ for theta in range(4):
                 fimg = cv2.filter2D(img2, cv2.CV_8UC3, kernel)
                 filtered_img = fimg.reshape(-1)
 
-                cv2.imwrite('./gabor/training/21/'+gabor_label+'.tif', filtered_img.reshape(img.shape))
+                cv2.imwrite('./gabor/training/'+imgName+'/'+gabor_label+'.tif', filtered_img.reshape(img.shape))
 
                 df[gabor_label] = filtered_img
                 print(gabor_label, ': theta=', theta, ': sigma=', sigma, ': lamda=', lamda, ': gamma=', gamma, ': phi=', phi)
