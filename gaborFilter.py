@@ -8,7 +8,7 @@ sigma = 10
 theta = 0
 lamda = 2
 gamma = 0.5
-phi = 0.8
+phi = 0
 
 imgName = "23"
 
@@ -47,3 +47,4 @@ print(df.head())
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
